@@ -111,16 +111,16 @@ I_{\mathrm{pump}} = I_{\max}\,\frac{[\mathrm{Na}]_i^3}{[\mathrm{Na}]_i^3 + K_{\m
 |---|---|---|---|
 | **Temperature** | \(T\) | 292–310 K | Affects all Nernst/GHK reversals |
 | **[Na⁺]ᵢ** | \([\mathrm{Na}]_i\) | 5–20 mM | Shifts $E_{\mathrm{Na}}$, pump load |
-| **[Na⁺]ₒ** | \([\mathrm{Na}]_o\) | 120–160 mM | Shifts \(E_{\mathrm{Na}}\) |
-| **[K⁺]ᵢ** | \([\mathrm{K}]_i\) | 120–160 mM | Shifts \(E_{\mathrm{K}}\), KCC2 term |
+| **[Na⁺]ₒ** | \([\mathrm{Na}]_o\) | 120–160 mM | Shifts $E_{\mathrm{Na}}$ |
+| **[K⁺]ᵢ** | \([\mathrm{K}]_i\) | 120–160 mM | Shifts $E_{\mathrm{K}}$, KCC2 term |
 | **[K⁺]ₒ** | \([\mathrm{K}]_o\) | 2–12 mM | Extracellular K⁺ dynamics/glia |
-| **[Cl⁻]ᵢ** | \([\mathrm{Cl}]_i\) | 3–25 mM | Sets inhibition polarity via \(E_{\mathrm{Cl}}\) |
+| **[Cl⁻]ᵢ** | \([\mathrm{Cl}]_i\) | 3–25 mM |Sets inhibition polarity via $E_{\mathrm{Cl}}$ |
 | **[Cl⁻]ₒ** | \([\mathrm{Cl}]_o\) | 110–140 mM | Bath chloride |
 | **g\_Na, g\_K, g\_L** | \(g_x\) | 0–1 (normed) | Channel densities |
 | **g\_Ca** | \(g_{\mathrm{Ca}}\) | 0–1 (normed) | Enables Ca²⁺ electrogenesis |
 | **Pump strength** | \(I_{\max}\) | 0–2× | Energy‑dependent stabilization |
-| **KCC2 strength** | \(k_{\mathrm{KCC2}}\) | 0–3× | Drives \(E_{\mathrm{Cl}}\to E_{\mathrm{K}}\) |
-| **NKCC1 strength** | \(k_{\mathrm{NKCC1}}\) | 0–3× | Loads Cl⁻ (depolarizes \(E_{\mathrm{Cl}}\)) |
+| **KCC2 strength** | \(k_{\mathrm{KCC2}}\) | 0–3× | Drives $E_{\mathrm{Cl}}\to E_{\mathrm{K}}$ |
+| **NKCC1 strength** | \(k_{\mathrm{NKCC1}}\) | 0–3× | Loads Cl⁻ (depolarizes $E_{\mathrm{Cl}}$) |
 | **Syn AMPA/GABA gain** | \(g_\mathrm{A}, g_\mathrm{G}\) | 0–5× | Exc/Inh balance |
 | **Syn time constants** | \(\tau, \tau_d\) | 1–50 ms | PSP shape |
 | **Stimulus** | \(I_\mathrm{app}\) | ±2 nA equiv. | Current clamp input |
@@ -134,20 +134,20 @@ I_{\mathrm{pump}} = I_{\max}\,\frac{[\mathrm{Na}]_i^3}{[\mathrm{Na}]_i^3 + K_{\m
 
 | Parameter | Value | Notes |
 |---|---:|---|
-| \(C_m\) | 200 pF | Small soma |
-| Area \(A\) | 10,000 µm² | For current↔flux conversion |
-| \([\mathrm{Na}]_i, [\mathrm{Na}]_o\) | 12, 145 mM | Intracellular/extracellular |
-| \([\mathrm{K}]_i, [\mathrm{K}]_o^{\*}\) | 140, 3.5 mM | Bath \([\mathrm{K}]_o^{\*}\) |
-| \([\mathrm{Cl}]_i, [\mathrm{Cl}]_o\) | 7, 130 mM | Mature neuron baseline |
-| \([\mathrm{Ca}]_i, [\mathrm{Ca}]_o\) | 0.1 µM, 2 mM | Effective pool |
-| \(g_\mathrm{Na}, g_\mathrm{K}, g_\mathrm{L}\) | 120, 36, 0.3 nS | HH‑like scale (rescaled) |
-| \(E_\mathrm{L}\) | −54.4 mV | Leak reversal |
-| \(g_\mathrm{Ca}\) | 0–2 nS | Optional |
-| Pump \(I_{\max}\) | 0.2 nA | Tunable |
-| \(k_{\mathrm{KCC2}}, k_{\mathrm{NKCC1}}\) | 1.0, 0.2 (arb.) | Scale factors |
-| \(\tau_{\mathrm{Ca}}\) | 80 ms | Ca²⁺ removal |
-| \(J_\mathrm{max}, K_{\mathrm{PMCA}}\) | 0.1 µM/ms, 0.3 µM | PMCA pump |
-| Temp \(T\) | 306 K | 33 °C demo labs |
+| $C_m$| 200 pF | Small soma |
+| Area $A$ | 10,000 µm² | For current↔flux conversion |
+| $[\mathrm{Na}]_i, [\mathrm{Na}]_o$ | 12, 145 mM | Intracellular/extracellular |
+| $[\mathrm{K}]_i, [\mathrm{K}]_o^{*}$ | 140, 3.5 mM | Bath $[\mathrm{K}]_o^{*}$ |
+| $[\mathrm{Cl}]_i, [\mathrm{Cl}]_o$ | 7, 130 mM | Mature neuron baseline |
+| $[\mathrm{Ca}]_i, [\mathrm{Ca}]_o$ | 0.1 µM, 2 mM | Effective pool |
+| $g_\mathrm{Na}, g_\mathrm{K}, g_\mathrm{L}$ | 120, 36, 0.3 nS | HH‑like scale (rescaled) |
+| $E_\mathrm{L}$ | −54.4 mV | Leak reversal |
+| $g_\mathrm{Ca}$ | 0–2 nS | Optional |
+| Pump $I_{\max}$ | 0.2 nA | Tunable |
+| $k_{\mathrm{KCC2}}, k_{\mathrm{NKCC1}}$ | 1.0, 0.2 (arb.) | Scale factors |
+| $\tau_{\mathrm{Ca}}$ | 80 ms | Ca²⁺ removal |
+| $J_\mathrm{max}, K_{\mathrm{PMCA}}$ | 0.1 µM/ms, 0.3 µM | PMCA pump |
+| Temp $T$ | 306 K | 33 °C demo labs |
 
 ---
 
