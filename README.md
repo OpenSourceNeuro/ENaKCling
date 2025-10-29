@@ -57,13 +57,13 @@ ENaKCling updates concentration state variables once per time step using flux–
 
 ### Sodium (intracellular)
 ```math
-\frac{d[\mathrm{Na}]_i}{dt} = -\gamma_i\,I_{\mathrm{Na}} - 3\,\gamma_i\,I_{\mathrm{pump}} + D_{\mathrm{Na}}\,( [\mathrm{Na}]_o^{\*} - [\mathrm{Na}]_i ),
+\frac{d[\mathrm{Na}]_i}{dt} = -\gamma_i\,I_{\mathrm{Na}} - 3\,\gamma_i\,I_{\mathrm{pump}} + D_{\mathrm{Na}}\,( [\mathrm{Na}]_o - [\mathrm{Na}]_i ),
 ```
 where the Na⁺/K⁺‑ATPase removes 3 Na⁺ per cycle and \(D_{\mathrm{Na}}\) lumps diffusion/buffering.
 
 ### Potassium (extracellular)
 ```math
-\frac{d[\mathrm{K}]_o}{dt} = \gamma_o\,I_{\mathrm{K}} - 2\,\gamma_o\,I_{\mathrm{pump}} - U_\mathrm{glia}([\mathrm{K}]_o) - D_{\mathrm{K}}\,([\mathrm{K}]_o - [\mathrm{K}]_o^{\*}),
+\frac{d[\mathrm{K}]_o}{dt} = \gamma_o\,I_{\mathrm{K}} - 2\,\gamma_o\,I_{\mathrm{pump}} - U_\mathrm{glia}([\mathrm{K}]_o) - D_{\mathrm{K}}\,([\mathrm{K}]_o - [\mathrm{K}]_o),
 ```
 with glial uptake \(U_\mathrm{glia}\) (sigmoid or Michaelis–Menten) and bath diffusion toward \([\mathrm{K}]_o^{\*}.\)
 
@@ -77,7 +77,7 @@ J_{\mathrm{NKCC1}} = k_{\mathrm{NKCC1}}\big([\mathrm{Na}]_o[\mathrm{K}]_o[\mathr
 ```
 They give net **Cl⁻ influx** positive (units: mol·m⁻²·s⁻¹). Update equation:
 ```math
-\frac{d[\mathrm{Cl}]_i}{dt} = +\gamma_i\,(I_{\mathrm{Cl}} + I_{\mathrm{GABA_A}}) - \frac{A}{\Omega_i}\big(J_{\mathrm{KCC2}} + J_{\mathrm{NKCC1}}\big) - D_{\mathrm{Cl}}\,([\mathrm{Cl}]_i - [\mathrm{Cl}]_i^{\*}).
+\frac{d[\mathrm{Cl}]_i}{dt} = +\gamma_i\,(I_{\mathrm{Cl}} + I_{\mathrm{GABA_A}}) - \frac{A}{\Omega_i}\big(J_{\mathrm{KCC2}} + J_{\mathrm{NKCC1}}\big) - D_{\mathrm{Cl}}\,([\mathrm{Cl}]_i - [\mathrm{Cl}]_i).
 ```
 
 > **Intuition:** KCC2 drives \(E_{\mathrm{Cl}}\) toward \(E_{\mathrm{K}}\) (Cl⁻ extrusion), NKCC1 loads Cl⁻ (depolarizes \(E_{\mathrm{Cl}}\)). Set \(k_{\mathrm{KCC2}}\) high to get strong inhibition (\(E_{\mathrm{Cl}}\approx E_{\mathrm{K}}\)); set \(k_{\mathrm{NKCC1}}\) high to mimic immature neurons or pathology.
@@ -110,7 +110,7 @@ I_{\mathrm{pump}} = I_{\max}\,\frac{[\mathrm{Na}]_i^3}{[\mathrm{Na}]_i^3 + K_{\m
 | Control | Symbol | Typical range | Effect |
 |---|---|---|---|
 | **Temperature** | \(T\) | 292–310 K | Affects all Nernst/GHK reversals |
-| **[Na⁺]ᵢ** | \([\mathrm{Na}]_i\) | 5–20 mM | Shifts \(E_{\mathrm{Na}}\), pump load |
+| **[Na⁺]ᵢ** | \([\mathrm{Na}]_i\) | 5–20 mM | Shifts $E_{\mathrm{Na}}$, pump load |
 | **[Na⁺]ₒ** | \([\mathrm{Na}]_o\) | 120–160 mM | Shifts \(E_{\mathrm{Na}}\) |
 | **[K⁺]ᵢ** | \([\mathrm{K}]_i\) | 120–160 mM | Shifts \(E_{\mathrm{K}}\), KCC2 term |
 | **[K⁺]ₒ** | \([\mathrm{K}]_o\) | 2–12 mM | Extracellular K⁺ dynamics/glia |
